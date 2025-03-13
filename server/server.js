@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Use laundry mat routes
-app.use('/laundry-mats', laundryMatsRouter);
+app.use('/machines', laundryMatsRouter);
 
 // Start the server
 app.listen(PORT, () => {
