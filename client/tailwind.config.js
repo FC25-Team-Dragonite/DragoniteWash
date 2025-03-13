@@ -1,9 +1,9 @@
 export default {
-  content: ['./index.html', './**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      animation: {
-        // bounce: 'bounce 0.5s infinite',
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
