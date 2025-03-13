@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import laundryMatsRouter from '../server/testApi';
+import laundryMatsRouter from './laundryMats.js';
 import pg from 'pg'
 
 // Load environment variables
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Use laundry mat routes
-app.use('/api/laundry-mats', laundryMatsRouter);
+app.use('/laundry-mats', laundryMatsRouter);
 
 // Start the server
 app.listen(PORT, () => {
