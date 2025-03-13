@@ -1,25 +1,20 @@
-import Washer from '../../src/Washer';
+import React from 'react';
+import WasherIcon from '../../src/Washer';
+import '../.././index.css';
+
 const LandingPage = () => {
   return (
-    <div>
+    <div className='flex flex-row'>
       <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-      <svg class='animate-bounce w-6 h-6 ...'>
-        <div>
-          <Washer />
-        </div>
-      </svg>
+      <br></br>
       <div>
-        <Washer />
-      </div>{' '}
+        <WasherIcon />
+      </div>
       <div>
-        <Washer />
+        <WasherIcon />
       </div>{' '}
-      <div>
-        <Washer />
-      </div>{' '}
-      <div>
-        <Washer />
-      </div>{' '}
+      <div>{/* <Washer /> */}</div> <div>{/* <Washer /> */}</div>{' '}
+      <div>{/* <Washer /> */}</div>{' '}
     </div>
   );
 };

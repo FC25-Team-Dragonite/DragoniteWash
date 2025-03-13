@@ -4,8 +4,8 @@ import Washer from './assets/Washer.png';
 class WasherIcon extends Component {
   render() {
     return (
-      <div>
-        <img src={Washer} alt='Washer Icon' />
+      <div className='animate-bounce w-16 h-16'>
+        <img src={Washer} alt='Washer Icon' className='w-full h-full' />
       </div>
     );
   }
