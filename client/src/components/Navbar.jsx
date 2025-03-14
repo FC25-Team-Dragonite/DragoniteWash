@@ -50,7 +50,6 @@ const Navbar = () => {
               <Phone
                 size={12}
                 strokeWidth={2.5}
-                className='mr-3'
                 color='#458ab6'
                 fill='#458ab6'
               />
