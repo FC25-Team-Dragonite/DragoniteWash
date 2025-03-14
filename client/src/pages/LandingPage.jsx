@@ -1,4 +1,8 @@
 import Navbar from '../components/Navbar';
+import WasherIcon from '../Washer';
+import DryerIcon from '../Dryer';
+
+// import '../.././index.css';
 
 const LandingPage = () => {
   return (
@@ -29,7 +33,9 @@ const LandingPage = () => {
               <tr>
                 <td className='px-6 py-4 text-sm text-gray-900'>Dryer</td>
                 <td className='px-6 py-4 text-sm text-gray-900'>$2.00</td>
-                <td className='px-6 py-4 text-sm text-gray-900'>Available</td>
+                <td className='px-6 py-4 text-sm text-gray-900'>
+                  <DryerIcon />{' '}
+                </td>
               </tr>
               <tr>
                 <td className='px-6 py-4 text-sm text-gray-900 rounded-bl-xl'>
@@ -37,7 +43,14 @@ const LandingPage = () => {
                 </td>
                 <td className='px-6 py-4 text-sm text-gray-900'>$4.50</td>
                 <td className='px-6 py-4 text-sm text-gray-900 rounded-br-xl'>
-                  In Use
+                  <div className='flex flex-wrap'>
+                    <div>
+                      <WasherIcon />
+                    </div>{' '}
+                    <WasherIcon />
+                    <WasherIcon />
+                    <WasherIcon />
+                  </div>
                 </td>
               </tr>
             </tbody>
