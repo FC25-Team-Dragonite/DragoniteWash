@@ -2,9 +2,10 @@
   "name": "dragonitewash",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -13,13 +14,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/FC25-Team-Dragonite/DragoniteWash/issues"
   },
   "homepage": "https://github.com/FC25-Team-Dragonite/DragoniteWash#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "path": "^0.12.7",
+    "pg": "^8.14.0"
   }
 }
