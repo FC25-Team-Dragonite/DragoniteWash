@@ -14,12 +14,47 @@ function createData(machine, price, availability) {
 }
 
 const rows = [
-  createData('Regular Load Washer', '$2.50', [<WasherIcon />, <WasherIcon />]),
-  createData('Large Load Washer', '$4.50', <LargeWasherIcon />),
+  createData('Regular Load Washer', '$2.50', [
+    <a href='#' className='hover:opacity-75 transition-opacity' key='washer1'>
+      <WasherIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='washer2'>
+      <WasherIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='washer2'>
+      <WasherIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='washer2'>
+      <WasherIcon />
+    </a>,
+  ]),
+  createData('Large Load Washer', '$4.50', [
+    <a href='#' className='hover:opacity-75 transition-opacity'>
+      <LargeWasherIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity'>
+      <LargeWasherIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity'>
+      <LargeWasherIcon />
+    </a>,
+  ]),
   createData('Dryer', '$0.25 per 15 minutes', [
-    <DryerIcon />,
-    <DryerIcon />,
-    <DryerIcon />,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='dryer1'>
+      <DryerIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='dryer2'>
+      <DryerIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='dryer3'>
+      <DryerIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='dryer1'>
+      <DryerIcon />
+    </a>,
+    <a href='#' className='hover:opacity-75 transition-opacity' key='dryer1'>
+      <DryerIcon />
+    </a>,
   ]),
 ];
 import WasherIcon from '../Washer';
@@ -67,7 +102,9 @@ const LandingPage = () => {
                   borderRadius: '6px',
                 }}
               >
-                <p className='text-center'>Check our availability below!</p>
+                <p className='text-center mt-4'>
+                  Check our availability below!
+                </p>
               </div>
             </div>
             <div className='flex items-center justify-center'>
@@ -91,6 +128,7 @@ const LandingPage = () => {
                   <TableCell>Machine</TableCell>
                   <TableCell>Price</TableCell>
                   <TableCell>Availability</TableCell>
+                  <TableCell align='right'></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -103,9 +141,15 @@ const LandingPage = () => {
                       {row.machine}
                     </TableCell>
                     <TableCell>{row.price}</TableCell>
-
                     <TableCell>
                       <div className='flex flex-wrap'>{row.availability}</div>
+                    </TableCell>
+                    <TableCell align='right'>
+                      <div className='mr-6'>
+                        <button className='bg-indigo-500 hover:bg-indigo-400 text-white px-6 py-2 rounded-full text-sm font-medium'>
+                          Reserve
+                        </button>
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}
