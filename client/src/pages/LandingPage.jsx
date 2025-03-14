@@ -18,6 +18,11 @@ const rows = [
   createData('Large Load Washer', '$4.50', 'Available'),
   createData('Dryer', '$0.25 per 15 minutes', 'In Use'),
 ];
+import WasherIcon from '../Washer';
+import DryerIcon from '../Dryer';
+import LargeWasherIcon from '../LargeWasher';
+
+// import '../.././index.css';
 
 const LandingPage = () => {
   return (
