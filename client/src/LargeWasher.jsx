@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Dryer from './assets/Dryer.png';
+import LargeWasher from './assets/LargeWasher.png'
 
-class DryerIcon extends Component {
+class LargeWasherIcon extends Component {
   render() {
     return (
       <>
@@ -13,13 +13,12 @@ class DryerIcon extends Component {
             }
           `}
         </style>
-
         <div className='w-16 h-16 mr-10 animate-[bounce_1s_ease-in-out_infinite] [animation-name:small-bounce]'>
-          <img src={Dryer} alt='Dryer Icon' className='w-3/4 h-3/4' />
+          <img src={LargeWasher} alt='Washer Icon' className='w-3/4 h-3/4' />
         </div>
       </>
     );
   }
 }
 
-export default DryerIcon;
+export default LargeWasherIcon;
