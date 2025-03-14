@@ -1,4 +1,23 @@
 import Navbar from '../components/Navbar';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import sparkleIcon from '../assets/Sparkle Icon.gif';
+import heroImage from '../assets/White Washer Dryer Photo.avif';
+
+function createData(machine, price, availability) {
+  return { machine, price, availability };
+}
+
+const rows = [
+  createData('Regular Load Washer', '$2.50', 'Available'),
+  createData('Large Load Washer', '$4.50', 'Available'),
+  createData('Dryer', '$0.25 per 15 minutes', 'In Use'),
+];
 import WasherIcon from '../Washer';
 import DryerIcon from '../Dryer';
 import LargeWasherIcon from '../LargeWasher';
@@ -7,68 +26,85 @@ import LargeWasherIcon from '../LargeWasher';
 
 const LandingPage = () => {
   return (
-    <div className='min-h-screen bg-sky-100'>
+    <div className='min-h-screen bg-sky-100' style={{ marginBottom: '40px' }}>
       <Navbar />
-      <main className='container mx-auto px-4 flex items-center justify-center min-h-[calc(100vh-3.5rem)]'>
-        <div className='bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-3xl'>
-          <table className='w-full'>
-            <thead className='bg-gray-50 justify-center'>
-              <tr>
-                <th className='px-6 py-3 text-left text-sm font-medium text-gray-500 rounded-tl-xl'>
-                  Machine Type
-                </th>
-                <th className='px-6 py-3 text-left text-sm font-medium text-gray-500'>
-                  Price
-                </th>
-                <th className='px-6 py-3 text-left text-sm font-medium text-gray-500 rounded-tr-xl'>
-                  Availability
-                </th>
-              </tr>
-            </thead>
-            <tbody className='divide-y divide-gray-200'>
-              <tr>
-                <td className='px-6 py-4 text-sm text-gray-900'>Washer</td>
-                <td className='px-6 py-4 text-sm text-gray-900'>$2.50</td>
-                <td className='px-6 py-4 text-sm text-gray-900'>
-                  <div className='flex flex-wrap gap-4'>
-                    <WasherIcon />
-                    <WasherIcon />
-                    <WasherIcon />
-                    {/* <div className='relative group'> */}
-                    <WasherIcon />
-                    {/* <div className='absolute bg-gray-800 text-white text-xs p-2 rounded-md opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all transform duration-300'>
-                        // This is a blurb for the Washer Icon! */}
-                    {/* </div> */}
-                    {/* </div> */}
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className='px-6 py-4 text-sm text-gray-900'>Dryer</td>
-                <td className='px-6 py-4 text-sm text-gray-900'>$2.00</td>
-                <td className='px-6 py-4 text-sm text-gray-900'>
-                  <div className='flex flex-wrap gap-4'>
-                    <DryerIcon />{' '}
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className='px-6 py-4 text-sm text-gray-900 rounded-bl-xl'>
-                  Large Washer
-                </td>
-                <td className='px-6 py-4 text-sm text-gray-900'>$4.50</td>
-                <td className='px-6 py-4 text-sm text-gray-900 rounded-br-xl'>
-                  <div className='flex flex-wrap gap-4'>
-                    {' '}
-                    <LargeWasherIcon />
-                    <LargeWasherIcon />
-                    <LargeWasherIcon />
-                    <LargeWasherIcon />
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <main className='container mx-auto px-4'>
+        <section className='py-12'>
+          <div className='grid grid-cols-2 gap-8'>
+            <div
+              style={{
+                padding: '20px',
+                marginBottom: '75px',
+                marginTop: '40px',
+              }}
+            >
+              <h1 className='text-[45px] font-bold text-gray-900 m-4'>
+                Your First Choice for Hassle-Free Laundry
+                <img
+                  src={sparkleIcon}
+                  alt='Sparkle'
+                  className='h-10 w-10'
+                  style={{ marginLeft: '5px' }}
+                />
+              </h1>
+              <p
+                className='text-[15px] text-gray-600'
+                style={{ marginRight: '10px' }}
+              >
+                Convenience at Your Fingertips – No more waiting around! The
+                Laundry Room lets you check machine availability in real time
+                and reserve washers and dryers at your convenience.
+              </p>
+              <div
+                style={{
+                  backgroundColor: '#c9dff3',
+                  color: '#2a4054',
+                  width: '300px',
+                  borderRadius: '6px',
+                }}
+              >
+                <p className='text-center'>Check our availability below!</p>
+              </div>
+            </div>
+            <div className='flex items-center justify-center'>
+              <img
+                src={heroImage}
+                alt='Laundry Room Illustration'
+                className='w-full h-[325px] object-contain rounded-lg shadow-lg'
+              />
+            </div>
+          </div>
+        </section>
+
+        <div className='flex justify-center'>
+          <TableContainer
+            component={Paper}
+            sx={{ maxWidth: '3xl', borderRadius: '12px' }}
+          >
+            <Table sx={{ minWidth: 650 }} aria-label='laundry machines table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Machine</TableCell>
+                  <TableCell>Price</TableCell>
+                  <TableCell>Availability</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.machine}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      {row.machine}
+                    </TableCell>
+                    <TableCell>{row.price}</TableCell>
+                    <TableCell>{row.availability}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
         </div>
       </main>
     </div>

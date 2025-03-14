@@ -12,6 +12,11 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.7",
+    "@tailwindcss/vite": "^4.0.12",
     "@vitejs/plugin-react": "^4.3.4",
     "lucide-react": "^0.479.0",
     "react": "^19.0.0",
