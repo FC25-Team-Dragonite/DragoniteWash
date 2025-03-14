@@ -14,9 +14,13 @@ function createData(machine, price, availability) {
 }
 
 const rows = [
-  createData('Regular Load Washer', '$2.50', 'Available'),
-  createData('Large Load Washer', '$4.50', 'Available'),
-  createData('Dryer', '$0.25 per 15 minutes', 'In Use'),
+  createData('Regular Load Washer', '$2.50', [<WasherIcon />, <WasherIcon />]),
+  createData('Large Load Washer', '$4.50', <LargeWasherIcon />),
+  createData('Dryer', '$0.25 per 15 minutes', [
+    <DryerIcon />,
+    <DryerIcon />,
+    <DryerIcon />,
+  ]),
 ];
 import WasherIcon from '../Washer';
 import DryerIcon from '../Dryer';
@@ -99,7 +103,10 @@ const LandingPage = () => {
                       {row.machine}
                     </TableCell>
                     <TableCell>{row.price}</TableCell>
-                    <TableCell>{row.availability}</TableCell>
+
+                    <TableCell>
+                      <div className='flex flex-wrap'>{row.availability}</div>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
