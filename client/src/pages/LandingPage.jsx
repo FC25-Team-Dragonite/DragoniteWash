@@ -14,9 +14,15 @@ function createData(machine, price, availability) {
 }
 
 const rows = [
-  createData('Regular Load Washer', '$2.50', 'Available'),
-  createData('Large Load Washer', '$4.50', 'Available'),
-  createData('Dryer', '$0.25 per 15 minutes', 'In Use'),
+  createData(
+    'Regular Load Washer',
+    '$2.50',
+    <WasherIcon />,
+    <WasherIcon />,
+    <WasherIcon />
+  ),
+  createData('Large Load Washer', '$4.50', <LargeWasherIcon />),
+  createData('Dryer', '$0.25 per 15 minutes', <DryerIcon />),
 ];
 import WasherIcon from '../Washer';
 import DryerIcon from '../Dryer';
